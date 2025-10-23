@@ -246,19 +246,19 @@ B. Now trace RIR site (www.ripe.net)
 #### 1.2.5 Video - Determining End Device IP Addresses w/ Packet Tracer
 
 - Find Device IP: 
-    - Device>Config>FastEthernet0>Static IPv4 and subnet mask. Settings will show default gateway.
+    - `Device>Config>FastEthernet0>Static IPv4 and subnet mask. Settings will show default gateway.`
     - Desktop tab>cmd> ipconfig
     - Dynamic Host Configuration Protocol (DHCP) - device can make a request to a DHCP server to be assigned an address
 
 #### 1.2.6 Video - Device Connection Types w/ Packet Tracer 
 
-- PC to switch: straight through cable, fastEthernet0 (NIC), connect to port FastEthernet0/1
-- Connect 2 switches: normally 2 like devices are connected with a crossover cable but it can vary depending on the device and port.
-    - Use GigabitEthernet0 port
+- `PC to switch: straight through cable,` `fastEthernet0 (NIC)`, `connect to port FastEthernet0/1`
+- Connect 2 switches: normally `2 like devices are connected with a crossover cable` but it can vary depending on the device and port.
+    - Use `GigabitEthernet0` port
 - Connect switch to router: straight through, connecting unlike devices
     - switch use other GigabitEthernet port use first on router.
     - red means you need to activate the router interface
-- Connect PC0 to router using console cable 
+- `Connect PC0 to router using console cable`
     - PC select RS32 port, on router select console port.
     - Allows you to manage the router using terminal interface software
 - Wireless connections are managed from the devices themselves
@@ -289,13 +289,13 @@ B. Now trace RIR site (www.ripe.net)
 - `Actuator` - Takes electrical input and transforms input into physical sensation
     - i.e. sensor detects temp, send to microcontroller, sends data to actuator to change temp. 
 
-### 2.0 Everything is Programmable 
+#### 5.2 Security
 
-- 
+![alt text](image-3.png)
+![alt text](image-4.png)
 
-
-
-
+![alt text](image-5.png)
+![alt text](image-6.png)
 
 
 
