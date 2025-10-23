@@ -268,6 +268,32 @@ B. Now trace RIR site (www.ripe.net)
 - Part 1: Build Simple Network
 - Part 2: Configure end devices & verify connectivity
 
+`***See Packet Tracer Course Notes***`
+
+
+### 1.3 Growth of IoT Devices
+
+#### 1.3.1 What is IoT
+
+- Definition: Collection of millions of smart devices and sensors connected through internet.
+- IoT has been possible thanks to cheap processors and wireless networks
+
+#### 1.3.5 How are IoT Devices Connected to the Network?
+
+- `Sensors`: Can either have a wired ethernet connection or a wireless connection to a controller
+    - Can use wireless ethernet but Bluetooth LE, Zigbee, or LoRa are more practical and save power
+    - When 'out in field' power consumption is important 
+- `Controllers` - are responsible for collecting data from sensors and providing network or internet connectivity. 
+    - Have the ability to make immediate decisions or can send data back to more powerful computer for analysis. 
+    - More powerful computer could be in same LAN as controller or only accessible through internet connection. 
+- `Actuator` - Takes electrical input and transforms input into physical sensation
+    - i.e. sensor detects temp, send to microcontroller, sends data to actuator to change temp. 
+
+### 2.0 Everything is Programmable 
+
+- 
+
+
 
 
 
