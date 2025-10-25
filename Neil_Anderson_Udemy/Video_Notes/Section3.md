@@ -31,6 +31,8 @@
     - Layers 5-7 are the 'Upper Layers' (Not *as* important to network eng)
     - Upper Layer traffic gets encapsulated within Layer 4 header & so on
 
+![alt text](image-29.png)
+
 - `De-Encapsulation (Receiving)` Data is received at Layer 1 and is `opened upwards (Really starts at Layer 3)`
     - L1: Cabled/Wired
     - L2: Check MAC address in layer to see if it's the right receiver, if not discard
