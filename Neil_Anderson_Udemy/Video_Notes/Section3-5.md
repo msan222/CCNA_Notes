@@ -160,6 +160,8 @@
 
 (Command Line)
 
+![alt text](image-30.png)
+
 ![alt text](image-3.png)
 - set scrollback to high number (like maybe 2000)
 - enable for privileged exec mode
@@ -333,4 +335,44 @@ Ex: Show config starting where hostname is:
 
 - SYN = Synchronized message
 
-#### TCP Header 
+#### TCP Header
+
+![alt text](image-31.png)
+
+- Code Bits/Windows: flow control
+- checksum: check if traffic got corrupted in traffic
+
+#### UDP
+
+- UDP sends traffic 'best effort' 
+- UDP is NOT:
+    - connection oriented (no handshake)
+    - no sequencing to make sure in correct order/not missing
+    - not reliable (no acknow.)
+    - no flow control
+    - no error detection or recovery, relies on upper layers
+
+![alt text](image-32.png)
+
+#### TCP vs UDP
+
+- App devs will choose UDP for traffic that needs to be reliable
+- Real-time apps like voice/video can't take as long so they use UDP (satellite phone)
+- Some apps can use both
+- TCP is most common
+
+#### Common Apps & their Destination Ports
+
+- TCP
+    - FTP (21)
+    - secure shell - SSH (22)
+    - Telnet (23)
+    - HTTP (80)
+    - HTTPS (443)
+
+- UDP 
+    - TFTP (69)
+    - SNMP (161)
+
+- TCP & UDP
+    - DNS(53)
