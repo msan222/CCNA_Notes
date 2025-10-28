@@ -224,5 +224,55 @@
 
 ![alt text](image-51.png)
 
+### Subnetting Overview
 
+#### Borrowing Host Bits
 
+- Example:
+    - Allocated Class C 200.15.10.0/24, need to split up for 1 business with 4 depts. over 2 offices
+    - `To subnet network into smaller subnets need to 'borrow' host bits and add to the network portion of address.`
+    - Network address line always moves right when we subnet
+    - The further right you go the more subnets you'll have of that size but less hosts
+
+#### Calculating the Number of Networks
+
+- To calc the number of available subnets, formula is 2^subnet-bits
+- If Class C uses /28 subnet mask then we've borrowed 4 bits from the default of /24
+    - 2^3 = 16 available subnets
+- If class B uses /28 mask then we've borrowed 12 bits from default 16. 
+    - 2^12 = 4096
+
+![alt text](image-52.png)
+
+#### Calculate # of hosts
+
+- Formula (2^host-bits)-2
+    - subtract 2 b/c network and broadcast address
+- If class C network uses /28 subnet mask then you have 4 bits for hosts
+    - i.e. (2^4)-2 = 14
+-If class B network uses /28 subnet then have 4 bits for hosts 
+    - (2^4)-2=14 
+
+**Class doesn't matter for hosts
+
+#### Note on 'ip subnet-zero' command
+
+- use to have to subtract 2 from # of available networks too
+    - in original internet not allowed to use network bits of all 1's or 0's (just like how you can't do for host bits)
+    - unnecessary and a waste of space
+- 'ip subnet-zero' command on router overrides the limitation and in enabled by default
+- don't -2 for Cisco or CCNA but some online calculators might do that
+
+### Subnetting Class C Networks and VLSM
+
+#### Class C /31 Subnet
+
+![alt text](image-53.png)
+
+- /31 would be written as 255.255.255.254
+- need to at least have one bit on the right if you need more than 1 host. Furthest you can go is /31
+    - leaves 1 bit for host address, with possible value of 1 or 0
+    - borrows 7 bits for network address
+    - gives us 128 subnets (2^7) which can accommodate 2 hosts each 
+
+![alt text](image-54.png)
