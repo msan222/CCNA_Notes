@@ -265,7 +265,7 @@
 
 ### Subnetting Class C Networks and VLSM
 
-#### Class C /31 Subnet
+#### Class C /31 Subnet S8V44-45
 
 ![alt text](image-53.png)
 
@@ -276,3 +276,130 @@
     - gives us 128 subnets (2^7) which can accommodate 2 hosts each 
 
 ![alt text](image-54.png)
+
+![alt text](image-55.png)
+
+- You can check this by:
+    - we're using 200.15.10.0, so the first three octets are never going to change. 
+    -The last octet, just start with all 0's, and then it would be 0000001, and then a 0 or a 1, and then 0000010,and then a 0 or a 1, and so on.
+
+![alt text](image-56.png)
+
+![alt text](image-57.png)
+
+![alt text](image-58.png)
+
+![alt text](image-59.png)
+
+- Here it's going up in values of 4 (line is right after the '4'). 
+    - The first subnet is going to be a 200.15.10.0, so 200.15.10.0 is the network address.
+    - Because the next range starts at 200.15.10.4, the broadcast address must be 200.15.10.3.
+    - So if 200.15.10.0 is the network address, and 200.15.10.3 is the broadcast address, the valid host addresses must be 200.15.10.1 and 200.15.10.2.
+
+    - The next subnet starts with 200.15.10.4. 
+    - The next subnet after that is at 200.15.10.8, so the broadcast address must be 200.15.10.7.
+    - So, network address of 200.15.10.4, broadcast address of 200.15.10.7 -> that leaves the addresses in between of 200.15.10.5 and 200.15.10.6 are available to be assigned to our hosts.
+
+#### /31 vs /30 
+
+- /30 & /31 both accommodate 2 hosts per subnet
+    - /31 supports 128 subnets, /30 only 64
+- /31 is useful if you need to maximize use of address space
+- /30 is more standard and commonly used
+- `For CCNA use /30 when a subnet supports 2 hosts is required unless told to use /31`
+
+#### Class C /29 
+
+![alt text](image-60.png)
+
+![alt text](image-61.png)
+
+![alt text](image-62.png)
+
+### Variable Length Subnet Masking Example Pt 1
+
+#### Variable Length Subnet Mask VLSM S8V46
+
+#### Subnetting Considerations
+
+- How many locations? How many hosts in each location?
+- IP addressing reqs for each location (dif dept/hosts in dif subnets)
+- what size is appropriate?
+
+![alt text](image-63.png)
+
+![alt text](image-64.png)
+
+- work down from largest to smallest
+    - IRL leave space in subnets for additional hosts/growth
+    - In CCNA do *exactly* the exact number, don't leave space
+
+![alt text](image-65.png)
+
+![alt text](image-66.png)
+
+#### VLSM Examples Pt 2 S8V
+
+![alt text](image-67.png)
+![alt text](image-68.png)
+![alt text](image-69.png)
+![alt text](image-70.png)
+![alt text](image-71.png)
+![alt text](image-72.png)
+![alt text](image-73.png)
+
+#### Subnetting Large Networks S8V48
+
+![alt text](image-74.png)
+
+![alt text](image-75.png)
+
+- Our IP: 135.15.10.138
+    - Look at the last octet = 138, and find where it fits:Between 136 and 144
+
+            List the subnet starts in increments of 8:
+            0, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248
+    
+            So the network address = 135.15.10.136
+
+            - When we say the magic number = 8, we’re saying “Each subnet starts every 8 numbers in the octet where subnetting occurs.”
+
+            - So the ‘8’ is the increment (or “block size”) that determines the starting point of each subnet.
+
+#### Subnetting Practice
+
+***See notebook
+
+![alt text](image-76.png)
+
+
+### Private IP Addresses S8V52
+
+- Internet Engineering Task Force (IETF) documents standards with RFC's (Requests for Comments)
+- RFC 1918 specifies private IP address ranges not routable on public internet
+
+Private IP Ranges in Each Class:
+- A: 10.0.0.0-10.255.255.255
+    - 10.0.0.0/8
+- B: 172.16.0.0-172.31.255.255
+    - 172.16.0.0/12
+    - 172.16.0.0 255.240.0.0
+- C: 192.168-192.168.255.255
+    - 192.168.0.0/16
+
+![alt text](image-77.png)
+
+![alt text](image-78.png)
+
+IPv6 is 128 bits 
+Provides 7.9*(10^28)
+
+![alt text](image-79.png)
+![alt text](image-80.png)
+
+![alt text](image-81.png)
+
+![alt text](image-82.png)
+![alt text](image-83.png)
+
+![alt text](image-84.png)
