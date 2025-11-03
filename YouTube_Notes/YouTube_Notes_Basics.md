@@ -108,7 +108,7 @@ EX:
 - Protocols used: `TCP (Transmission COntrol Protocol)` and `UDP (User Datagram Protocol)`
     - i.e. You're accessing a really large webpage. All the data can't fit into a single frame so you have to split it up into multiple frames.
 
-![alt text](image-1.png)
+![alt text](images/image-1.png)
 
 #### Layer 5 - Session Layer
 
@@ -120,7 +120,7 @@ EX:
 - Character Encoding
 - Application encryption `(SSL/TLS)`
 
-![alt text](image-2.png)
+![alt text](images/image-2.png)
 
 #### Layer 7 - Application Layer
 
@@ -131,11 +131,11 @@ EX:
 
 - WireShark
 
-![alt text](image-3.png)
+![alt text](images/image-3.png)
 
 - Google Mail Example
 
-![alt text](image-4.png)
+![alt text](images/image-4.png)
     - Mail will prolly use TCP443 to send, use that protocol for TCP encapsulation at `layer 4 Transport`
     - IP addresses used between your computer and the google mail server, all that communication is happening because of `Layer 3 Network`: IP encapsulation.
     - All TCP and IP traffic is encapsulated in Ethernet frames, and they can be sent over the network because of `Data Link Layer 2`
@@ -145,18 +145,18 @@ EX:
 ### Techquickie (Linustechtips)
 
 - `TCP/IP`: Transmission Control Protocol and Internet Protocol
-![alt text](image-5.png)
+![alt text](images/image-5.png)
     - Application: Apps, HTTP, SMTP, etc.
     - Transport: TCP, UDP
         - UDP is a bit faster and better for low-latency apps like online game
 
-![alt text](image-6.png)
-![alt text](image-7.png)
+![alt text](images/image-6.png)
+![alt text](images/image-7.png)
 - TCP Header is instructions on how to put pieces back together along w/ error checking
 
-![alt text](image-8.png)
+![alt text](images/image-8.png)
 then sent through file network layer -> 
-![alt text](image-9.png)
+![alt text](images/image-9.png)
 network layer (handles MAC addressing) packets can go to right physical machine and turns into electrical impulses
 
 
@@ -165,10 +165,10 @@ network layer (handles MAC addressing) packets can go to right physical machine 
 ### NetworkChuck-FreeCCNA EP3
 
 - `TCP/IP - Set of guidelines on how computers can communicate` 
-![alt text](image-11.png)
+![alt text](images/image-11.png)
 
 - `**** CCNA TIP`: Physical layer of TCP/IP can be divided into 2 parts (physical and data link)
-![alt text](image-12.png)
+![alt text](images/image-12.png)
 
 - Layer 2 (Data Link): How hosts on same network can communicate. Uses MAC Addresses
 
@@ -180,10 +180,10 @@ network layer (handles MAC addressing) packets can go to right physical machine 
     - OSI (Winner): Separate, between Application and Transport 
     - TCP/IP: Extra layers stuffed inside application layer
 
-![alt text](image-14.png)
+![alt text](images/image-14.png)
 
 - Practice:
 
-![alt text](image-16.png)
-![alt text](image-17.png)
+![alt text](images/image-16.png)
+![alt text](images/image-17.png)
 

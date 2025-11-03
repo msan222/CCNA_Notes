@@ -48,7 +48,7 @@
     - Coaxial cable from ISP is connected to cable modem, ethernet cable from local network is also connected. 
     - Cable modem converts coaxial connection to ethernet connection
 
-![alt text](image-1.png)
+![alt text](images/image-1.png)
 
 ### 2.1.2  Packet Tracer Pka Creating a Simple Network
 
@@ -60,7 +60,7 @@
 -As internet got bigger we needed more IP addresses which is where IPv6 comes in. (More on IPv6 later)
 
 
-![alt text](image-2.png)
+![alt text](images/image-2.png)
 - For this chart:
     - The IP addresses for the end devices can range from 192.168.0.2 to 192.168.0.254
     - Each NIC (network interface card) will get a unique IP address in the same network.

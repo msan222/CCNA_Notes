@@ -2,14 +2,14 @@
 
 ### S9V58 Local Area Network Layer 2 - Ethernet
 
-![alt text](image-85.png)
+![alt text](images/image-85.png)
 
 - ethernet ubiquitous on LAN
 
 
-![alt text](image-86.png)
+![alt text](images/image-86.png)
 
-![alt text](image-87.png)
+![alt text](images/image-87.png)
 
 - Preamble: help sender and reciever synchronize
 - Layer 2 destination/source - MAC addresses where we're using ethernet
@@ -22,125 +22,125 @@ FCS - Frame Check Sequence - cyclical redundancy check for integrity of Frame, n
 
 - NO logical addressing with MAC addresses (just a big flat space, no order)
 
-![alt text](image-88.png)
+![alt text](images/image-88.png)
 
-![alt text](image-89.png)
+![alt text](images/image-89.png)
 
 to get MAC address on windows: ipconfig /all
 
-![alt text](image-90.png)
+![alt text](images/image-90.png)
 
 linux: ifconfig
 
-![alt text](image-91.png)
+![alt text](images/image-91.png)
 
 - IOS: show interface
 
-![alt text](image-92.png)
+![alt text](images/image-92.png)
 
 ## Section 10 - OSI Layer 1 - Physical Layer 
 
 ### S10V60 Ethernet Connection Media
 
-![alt text](image-93.png)
+![alt text](images/image-93.png)
 
 - Defines cables to be used, interface cards and ethernet ports, or WAN port types 
 
-![alt text](image-94.png)
+![alt text](images/image-94.png)
 
-![alt text](image-95.png)
+![alt text](images/image-95.png)
 
-![alt text](image-96.png)
+![alt text](images/image-96.png)
 
-![alt text](image-97.png)
+![alt text](images/image-97.png)
 
-![alt text](image-98.png)
+![alt text](images/image-98.png)
 
-![alt text](image-99.png)
+![alt text](images/image-99.png)
 
-![alt text](image-100.png)
+![alt text](images/image-100.png)
 
 ## Section 11 - Cisco Device Functions
 
 ### Hubs & Switches S11V62
 
-![alt text](image-101.png)
+![alt text](images/image-101.png)
 
 - likely to have more than 1 switch in a larger LAN (campus)
 
-![alt text](image-102.png)
+![alt text](images/image-102.png)
 
-![alt text](image-103.png)
+![alt text](images/image-103.png)
 
-![alt text](image-104.png)
+![alt text](images/image-104.png)
 
-![alt text](image-105.png)
+![alt text](images/image-105.png)
 
-![alt text](image-106.png)
+![alt text](images/image-106.png)
 
-![alt text](image-107.png)
+![alt text](images/image-107.png)
 
 ### Switch Operation S11V63
 
-![alt text](image-108.png)
-![alt text](image-109.png)
+![alt text](images/image-108.png)
+![alt text](images/image-109.png)
 
 - Switch doesn't know 2.2.2 so it sends it out all ports
 - 3.3.3 reads that the destination address is 2.2.2 and silently discards it
 
 -2.2.2 is sending back
-![alt text](image-110.png)
+![alt text](images/image-110.png)
 
 - knows 1.1.1 so it just sends it there 
 
-![alt text](image-111.png)
+![alt text](images/image-111.png)
 
-![alt text](image-112.png)
+![alt text](images/image-112.png)
 
-![alt text](image-114.png)
+![alt text](images/image-114.png)
 
-![alt text](image-115.png)
+![alt text](images/image-115.png)
 
-![alt text](image-116.png)
+![alt text](images/image-116.png)
 
 Next
 
-![alt text](image-117.png)
+![alt text](images/image-117.png)
 
-![alt text](image-118.png)
-![alt text](image-119.png)
-![alt text](image-120.png)
-![alt text](image-121.png)
-![alt text](image-122.png)
-![alt text](image-123.png)
+![alt text](images/image-118.png)
+![alt text](images/image-119.png)
+![alt text](images/image-120.png)
+![alt text](images/image-121.png)
+![alt text](images/image-122.png)
+![alt text](images/image-123.png)
 
 ### Routers S11V63
 
-![alt text](image-124.png)
+![alt text](images/image-124.png)
 
 - when they are routing they are doing it at layer 3
 
-![alt text](image-125.png)
+![alt text](images/image-125.png)
 
 - routers support many more different types of ports than switches and usually have less available ports
 
-![alt text](image-126.png)
+![alt text](images/image-126.png)
 
-![alt text](image-127.png)
+![alt text](images/image-127.png)
 
-![alt text](image-128.png)
+![alt text](images/image-128.png)
 
-![alt text](image-129.png)
+![alt text](images/image-129.png)
 
 ### Other Cisco Devices S11V65
 
-![alt text](image-130.png)
+![alt text](images/image-130.png)
 
-![alt text](image-131.png)
+![alt text](images/image-131.png)
 
-![alt text](image-132.png)
+![alt text](images/image-132.png)
 
-![alt text](image-133.png)
+![alt text](images/image-133.png)
 
 ### Section 11 Lab
 
@@ -183,7 +183,7 @@ IOS Commands:
     - Now with some applications, it will actually put the IP address directly in there
     - More often it will use an `FQDN`, a `Fully Qualified Domain Name`, such as www.cisco.com, and that `FQDN has to be resolved to an IP address` that we can put into the packet.
 
-![alt text](image-134.png)
+![alt text](images/image-134.png)
 
 - Enterprises will typically have internal DNS server to resolve IP addresses of internal hosts
     - Hosts send DNS queries to server
@@ -192,31 +192,31 @@ IOS Commands:
 
 Windows System:
 
-![alt text](image-135.png)
-![alt text](image-136.png)
+![alt text](images/image-135.png)
+![alt text](images/image-136.png)
 
 - DNS domain that he's part of above part of is FlackboxA.lab
 
 Windows:
 
-![alt text](image-137.png)
+![alt text](images/image-137.png)
 
-![alt text](image-138.png)
+![alt text](images/image-138.png)
 
 ^All these hosts are in FlackboxA.lab domain 
 
 Configure if FQDN request resolves to public IP (Windows): 
 
-![alt text](image-139.png)
-![alt text](image-140.png)
-![alt text](image-141.png)
+![alt text](images/image-139.png)
+![alt text](images/image-140.png)
+![alt text](images/image-141.png)
 
 ^ Then hit edit and put in IP address of a public DNS server
 
 Linux:
 
-![alt text](image-142.png)
-![alt text](image-143.png)
+![alt text](images/image-142.png)
+![alt text](images/image-143.png)
 
 ^ping works fine bc were able to resolve it
     - ping with FQDN or IP
@@ -229,7 +229,7 @@ Linux:
     - Ex: wan to ping Linux from router, would need to set it up as a DNS client
     - ** Do not need to set it up as a DNS client to have DNS traffic pass through it
 
-![alt text](image-144.png)
+![alt text](images/image-144.png)
 
 - `ip domain-lookup` allows it to lookup/use a DNS server
 - `ip name-server` allows to loop up address of DNS server (configure where DNS server is)
@@ -240,30 +240,30 @@ If you wanted it to be your DNS server you'd enter the same DNS client commands 
 
 - won't usually make a Cisco router to be a DNS server
 
-![alt text](image-145.png)
+![alt text](images/image-145.png)
 
-![alt text](image-146.png)
+![alt text](images/image-146.png)
 
 To make the Cisco Router a DNS server:
 
-![alt text](image-147.png)
+![alt text](images/image-147.png)
 
 Enter Addresses for host we want to resolve:
 
-![alt text](image-148.png)
+![alt text](images/image-148.png)
 
 Enter FQDNs: 
 
-![alt text](image-149.png)
+![alt text](images/image-149.png)
 
 Now Config R1 to be DNS Client:
 
-![alt text](image-150.png)
+![alt text](images/image-150.png)
 
 Test with ping: 
 
-![alt text](image-151.png)
-![alt text](image-152.png)
+![alt text](images/image-151.png)
+![alt text](images/image-152.png)
 
 ### ARP Address Resolution Protocol S12V69
 
@@ -278,7 +278,7 @@ Test with ping:
 
 - ARP Request is a Layer 2 (Data Link) Broadcast
 
-![alt text](image-153.png)
+![alt text](images/image-153.png)
 
 - Need the receiver MAC address to finish composing the packet (layer 2). Sends out an ARP request to get that info
 - The ARP request says, "Hey, I'm looking for 172.23.4.2, what's your MAC address?" 
@@ -294,15 +294,15 @@ Test with ping:
     - This will come from come from source MAC address 2222.3333.4444 and the destination MAC address is the original sender's unicast MAC address of 1111.2222.33333.
     - Receiver knows where to send it back because 
 
-![alt text](image-154.png)
+![alt text](images/image-154.png)
 
-![alt text](image-155.png)
+![alt text](images/image-155.png)
 
-![alt text](image-156.png)
+![alt text](images/image-156.png)
 
-![alt text](image-157.png)
+![alt text](images/image-157.png)
 
-![alt text](image-158.png)
+![alt text](images/image-158.png)
 
 ### ARP for Routed Traffic S12V71
 
@@ -310,164 +310,164 @@ Test with ping:
 
 - Instead sends and ARP request for its default gateway
 
-![alt text](image-159.png)
+![alt text](images/image-159.png)
 
-![alt text](image-160.png)
+![alt text](images/image-160.png)
 
 - Router will then hold packet as it makes the ARP request for receiver
     - Source MAC is the router's IP 
-![alt text](image-161.png)
+![alt text](images/image-161.png)
 
-![alt text](image-162.png)
+![alt text](images/image-162.png)
 
-![alt text](image-163.png)
+![alt text](images/image-163.png)
 
 - The IPv4 information in the packet never changes. The source IP address is always the original sender, which is 172.23.4.1
 
 - the MAC address source and destination will change physical hop by physical hop
 
-![alt text](image-164.png)
+![alt text](images/image-164.png)
 
-![alt text](image-165.png)
+![alt text](images/image-165.png)
 
-![alt text](image-166.png)
+![alt text](images/image-166.png)
 
 ### Life of a Packet Example Pt 1 - DNS S12V72
 
 - review of Section 12 so far
 
-![alt text](image-167.png)
+![alt text](images/image-167.png)
 
 - Sending HTTP traffic from Host A to www.flackbox.com
     - will use FQDN to send that traffic, will need DNS
 
 #### Resolving the FQDN to IP by DNS
 
-![alt text](image-168.png)
+![alt text](images/image-168.png)
 
-![alt text](image-169.png)
+![alt text](images/image-169.png)
 
-![alt text](image-170.png)
+![alt text](images/image-170.png)
 
-![alt text](image-171.png)
+![alt text](images/image-171.png)
 
-![alt text](image-172.png)
+![alt text](images/image-172.png)
 
-![alt text](image-173.png)
+![alt text](images/image-173.png)
 
-![alt text](image-174.png)
+![alt text](images/image-174.png)
 
-![alt text](image-175.png)
+![alt text](images/image-175.png)
 
-![alt text](image-177.png)
+![alt text](images/image-177.png)
 
-![alt text](image-178.png)
+![alt text](images/image-178.png)
 
-![alt text](image-179.png)
+![alt text](images/image-179.png)
 
-![alt text](image-180.png)
+![alt text](images/image-180.png)
 
-![alt text](image-181.png)
+![alt text](images/image-181.png)
 
-![alt text](image-182.png)
+![alt text](images/image-182.png)
 
-![alt text](image-183.png)
+![alt text](images/image-183.png)
 
-![alt text](image-184.png)
+![alt text](images/image-184.png)
 
-![alt text](image-185.png)
+![alt text](images/image-185.png)
 
-![alt text](image-186.png)
+![alt text](images/image-186.png)
 
-![alt text](image-187.png)
+![alt text](images/image-187.png)
 
-![alt text](image-188.png)
+![alt text](images/image-188.png)
 
-![alt text](image-189.png)
+![alt text](images/image-189.png)
 
-![alt text](image-190.png)
+![alt text](images/image-190.png)
 
-![alt text](image-191.png)
+![alt text](images/image-191.png)
 
-![alt text](image-192.png)
+![alt text](images/image-192.png)
 
-![alt text](image-193.png)
+![alt text](images/image-193.png)
 
-![alt text](image-194.png)
+![alt text](images/image-194.png)
 
-![alt text](image-195.png)
+![alt text](images/image-195.png)
 
-![alt text](image-196.png)
+![alt text](images/image-196.png)
 
-![alt text](image-197.png)
+![alt text](images/image-197.png)
 
-![alt text](image-198.png)
+![alt text](images/image-198.png)
 
-![alt text](image-199.png)
+![alt text](images/image-199.png)
 
-![alt text](image-200.png)
+![alt text](images/image-200.png)
 
-![alt text](image-201.png)
+![alt text](images/image-201.png)
 
 #### Life of a Packet Example Pt 2 - S12V73
 
 #### HTTP
 
-![alt text](image-202.png)
+![alt text](images/image-202.png)
 
-![alt text](image-203.png)
+![alt text](images/image-203.png)
 
-![alt text](image-204.png)
+![alt text](images/image-204.png)
 
-![alt text](image-205.png)
+![alt text](images/image-205.png)
 
- ![alt text](image-206.png)
+ ![alt text](images/image-206.png)
 
- ![alt text](image-207.png)
+ ![alt text](images/image-207.png)
 
- ![alt text](image-208.png)
+ ![alt text](images/image-208.png)
 
- ![alt text](image-209.png)
+ ![alt text](images/image-209.png)
 
- ![alt text](image-210.png)
+ ![alt text](images/image-210.png)
 
- ![alt text](image-211.png)
+ ![alt text](images/image-211.png)
 
- ![alt text](image-212.png)
+ ![alt text](images/image-212.png)
 
- ![alt text](image-213.png)
+ ![alt text](images/image-213.png)
 
- ![alt text](image-214.png)
+ ![alt text](images/image-214.png)
 
- ![alt text](image-215.png)
+ ![alt text](images/image-215.png)
 
- ![alt text](image-216.png)
+ ![alt text](images/image-216.png)
 
- ![alt text](image-217.png)
+ ![alt text](images/image-217.png)
 
- ![alt text](image-218.png)
+ ![alt text](images/image-218.png)
 
- ![alt text](image-219.png)
+ ![alt text](images/image-219.png)
 
- ![alt text](image-220.png)
+ ![alt text](images/image-220.png)
 
- ![alt text](image-221.png)
+ ![alt text](images/image-221.png)
 
- ![alt text](image-222.png)
+ ![alt text](images/image-222.png)
 
- ![alt text](image-223.png)
+ ![alt text](images/image-223.png)
 
- ![alt text](image-224.png)
+ ![alt text](images/image-224.png)
 
- ![alt text](image-225.png)
+ ![alt text](images/image-225.png)
 
- ![alt text](image-226.png)
+ ![alt text](images/image-226.png)
 
- ![alt text](image-227.png)
+ ![alt text](images/image-227.png)
 
- ![alt text](image-228.png)
+ ![alt text](images/image-228.png)
 
- ![alt text](image-229.png)
+ ![alt text](images/image-229.png)
 
- ![alt text](image-230.png)
+ ![alt text](images/image-230.png)
  

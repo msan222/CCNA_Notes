@@ -2,5 +2,9 @@
     "cSpell.words": [
         "encap",
         "microcontroller"
-    ]
+    ],
+
+    "pasteImage.path": "${currentFileDir}/images"
+    
 }
+

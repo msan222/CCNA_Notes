@@ -31,7 +31,7 @@
     - Layers 5-7 are the 'Upper Layers' (Not *as* important to network eng)
     - Upper Layer traffic gets encapsulated within Layer 4 header & so on
 
-![alt text](image-29.png)
+![alt text](images/image-29.png)
 
 - `De-Encapsulation (Receiving)` Data is received at Layer 1 and is `opened upwards (Really starts at Layer 3)`
     - L1: Cabled/Wired
@@ -51,7 +51,7 @@
 
 #### Host Communication Terminology
 
-![alt text](image-1.png)
+![alt text](images/image-1.png)
 
 - when 2 hosts talk they are exchanging `PDUs (protocol data units)`
     - PDUs: The entire communication from L7-L1 of OSI
@@ -142,7 +142,7 @@
 
 - New Console cable: USB -> laptop and mini USB -> router
 
-![alt text](image-2.png)
+![alt text](images/image-2.png)
 
 - Use puTTY again
     - Need to use 'serial' type connection this time to connect to console port
@@ -160,9 +160,9 @@
 
 (Command Line)
 
-![alt text](image-30.png)
+![alt text](images/image-30.png)
 
-![alt text](image-3.png)
+![alt text](images/image-3.png)
 - set scrollback to high number (like maybe 2000)
 - enable for privileged exec mode
 - Ctrl + c -> break out of command
@@ -187,24 +187,24 @@
 - Command to reboot:
     - `Router# reload`
 
-![alt text](image-4.png)
+![alt text](images/image-4.png)
 - to get around it put `'do'` at front - makes it work from any level except for enable/privileged exec mode
 
-![alt text](image-5.png)
+![alt text](images/image-5.png)
 
 - Global Configuration is for configuring the entire router as a whole. If you need to configure a specific interface you have to go to that level in the cmd hierarchy.
 
 - Command to go to FastEthernet0/0 to do configurations:
 
-![alt text](image-6.png)
+![alt text](images/image-6.png)
 
 - You have to go up through the levels one by one, which is why this doesn't work
-![alt text](image-7.png)
+![alt text](images/image-7.png)
 
 - how to get to global configuration:
     - Router1# `config t`
 
-![alt text](image-8.png)
+![alt text](images/image-8.png)
 
 - Router1# -> This is the enable/user exec prompt
 - `'end'` - drop all the way back down to the enable prompt
@@ -214,42 +214,42 @@
 - `Router1(Config)# do show ip interface brief`
     - will show all IP interfaces on the router, states, and IP address
 
-![alt text](image-9.png)
+![alt text](images/image-9.png)
 
 - `Router1(Config)# show running-config`
     - shows entire configuration on router
 
-![alt text](image-10.png)
+![alt text](images/image-10.png)
 
 - Can use switches to help narrow down & target what part of the config you want to look at
 EX: just show specific interface:
 
-![alt text](image-11.png)
+![alt text](images/image-11.png)
 
 - Others use a pipe (|)
 
-![alt text](image-12.png)
+![alt text](images/image-12.png)
 
 Ex: Show config starting where hostname is:
 
-![alt text](image-13.png)
+![alt text](images/image-13.png)
 
 - **Exception to case-insensitive** - regex
     - Here nothing shows up because capital H Hostname is not in the running config:
 
-![alt text](image-14.png)
+![alt text](images/image-14.png)
 
 - Shows all the lines that include 'interface':
 
-![alt text](image-16.png)
+![alt text](images/image-16.png)
 
 - Shows all lines excluding 'interface':
 
-![alt text](image-17.png)
+![alt text](images/image-17.png)
 
 - Shows configuration for all the different interfaces: 
 
-![alt text](image-18.png)
+![alt text](images/image-18.png)
 
 - can do the same with protocols i.e. BGP:
     - `Router1# sh run | section bgp`
@@ -257,7 +257,7 @@ Ex: Show config starting where hostname is:
 ### Cisco IOS Configuration Management S4V25
 
 - Change hostname:
-![alt text](image-19.png)
+![alt text](images/image-19.png)
 
 - When you make a change in IOS it shows up immediately and goes/shoes up in the running configuration
 - `Starting Config`: Config that goes into effect when the router is next started up. 
@@ -270,11 +270,11 @@ Ex: Show config starting where hostname is:
 
 - Backup your config:
 
-![alt text](image-20.png)
+![alt text](images/image-20.png)
 
 -Now it's backed up
 
-![alt text](image-21.png)
+![alt text](images/image-21.png)
 
 - show it: Router1# show flash
 - To restore from this backup, copy it to the startup config and reboot server 
@@ -282,16 +282,16 @@ Ex: Show config starting where hostname is:
     2. `copy flash:my-config`
     3. reboot router
 
-![alt text](image-22.png)
+![alt text](images/image-22.png)
 
 - However, bad idea to backup to the same device cause you can't get it if something goes wrong
 - Instead, copy to TFTP server
 
-![alt text](image-23.png)
+![alt text](images/image-23.png)
 
 - Check contents (safe to flash)
 
-![alt text](image-24.png)
+![alt text](images/image-24.png)
 
 - IOS operating System is stored in Flash
 - Startup Configuration is stored in `NVRAM (Non-volatile Random Access Memory` so it's persistent across a reboot)
@@ -306,7 +306,7 @@ Ex: Show config starting where hostname is:
         - `flow control` - process of adjusting flow of data from sender to make sure host can handle all of it (This isn't mandatory)
     - `Session multiplexing`: host is able to support multiple sessions at the same time and manage individual traffic streams over a single link. 
     
-    ![alt text](image-25.png)
+    ![alt text](images/image-25.png)
 
     #### Layer 4 port numbers
 
@@ -317,11 +317,11 @@ Ex: Show config starting where hostname is:
     - Sender also adds source port number to the layer 4 header
     - Combo of source & destination port numbers can be used to track sessions
 
-    ![alt text](image-26.png)
+    ![alt text](images/image-26.png)
 
     - When sending traffic back the receiver will flip the numbers around - Port 80 will be the source now and port 1500 will be the destination. (also how stateful firewalls can keep track of connections)
 
-    ![alt text](image-27.png)
+    ![alt text](images/image-27.png)
 
 #### TCP
 
@@ -331,13 +331,13 @@ Ex: Show config starting where hostname is:
     - TCP is reliable - receiving host sends acknowledgements back to sender, lost segments get resent
     - TCP performs flow control.
 
-![alt text](image-28.png)
+![alt text](images/image-28.png)
 
 - SYN = Synchronized message
 
 #### TCP Header
 
-![alt text](image-31.png)
+![alt text](images/image-31.png)
 
 - Code Bits/Windows: flow control
 - checksum: check if traffic got corrupted in traffic
@@ -352,7 +352,7 @@ Ex: Show config starting where hostname is:
     - no flow control
     - no error detection or recovery, relies on upper layers
 
-![alt text](image-32.png)
+![alt text](images/image-32.png)
 
 #### TCP vs UDP
 

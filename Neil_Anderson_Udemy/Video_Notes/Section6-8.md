@@ -18,7 +18,7 @@
 
 ####  IP Header
 
-![alt text](image-33.png)
+![alt text](images/image-33.png)
 
 - Type of service - router can take action later
 - w/ dif media types there is a max size of the packet
@@ -41,7 +41,7 @@
     - `Broadcast: all hosts on subnet`
         - only 1 copy of the traffic
         - once it hits the router it doesn't forward broadcast traffic. (not good for performance/security) 
-        ![alt text](image-34.png)
+        ![alt text](images/image-34.png)
     - `Multicast: multiple interested hosts`
         - receivers have to request it to get it
         - one copy to multiple destinations
@@ -54,9 +54,9 @@
     - 0 or 1
     - every time you add a column on left value is multiplied by 2 instead of 10 like in decimal
 
-![alt text](image-35.png)
+![alt text](images/image-35.png)
 
-![alt text](image-36.png)
+![alt text](images/image-36.png)
 
 ### IPv4 Addresses S6V33
 
@@ -89,7 +89,7 @@
 
 - each octet (8 bits) in an IP address has a value from 0 to 255 
 
-![alt text](image-37.png) 
+![alt text](images/image-37.png) 
 
 ### Subnet Mast S6V35
 
@@ -100,12 +100,12 @@
 - host's IP is split into network and host portions
 - subnet mask tells where boundary is 
 
-![alt text](image-38.png)
+![alt text](images/image-38.png)
 
-![alt text](image-39.png)
+![alt text](images/image-39.png)
 
-![alt text](image-40.png)
-![alt text](image-41.png)
+![alt text](images/image-40.png)
+![alt text](images/image-41.png)
 
 - Subnet mask is *always* block of 1s then block of 0s (no mixing them up)
 - host portion is available to be given to dif. hosts on same subnet (PCs, Servers, Printers, Routers, etc)
@@ -122,7 +122,7 @@
 - subnet mask always starts with block of 1's it will be 1 to 32 bits from left to right 
 - can write it in slash notation (more convenient)
 
-![alt text](image-42.png)
+![alt text](images/image-42.png)
 
 - 24 bits in a row so you can just write it as /24
 - `Ex`: 192.168.10.14 with a subnet mask of 255.255.0.0 can be written as 192.168.10.14/16
@@ -151,19 +151,19 @@
         - 126 networks and 16,777,214 hosts
             - 24 host bits, each can be 0 or 1, so total number of combinations is 2^24.
 
-![alt text](image-43.png)
+![alt text](images/image-43.png)
 
-![alt text](image-44.png)
+![alt text](images/image-44.png)
 
 - you can ping 127.0.0.1-127.255.255.254 to test if TCP/IP is working on the local machine 
 
-![alt text](image-45.png)
+![alt text](images/image-45.png)
 
 ### IP Addresses Class C and D S7V39
 
 - `Class B`: Medium-large sized networks
 
-![alt text](image-46.png)
+![alt text](images/image-46.png)
 
 - two high-order bits in a class B address are always set to binary 1 0 
 - default subnet = /16
@@ -173,7 +173,7 @@
 
 -`Class C`: used for small networks
 
-![alt text](image-47.png)
+![alt text](images/image-47.png)
 
 - high order bits are always set to binary 1 1 0
 - default subnet mask is /24
@@ -195,7 +195,7 @@
 - not allocated to hosts, no default subnet mask
 - Valid addresses: 244.0.0.0 to 239.255.255.255
 
- ![alt text](image-48.png)
+ ![alt text](images/image-48.png)
 
 - Class E Addresses - Experimental reserved for future use.
 - high order bits are 1 1 1 1
@@ -208,7 +208,7 @@
 
 #### Summary Chart
 
-![alt text](image-49.png)
+![alt text](images/image-49.png)
 
 `^Need to memorize`
 
@@ -222,7 +222,7 @@
     - i.e. 175.10.10.0/20
     - Companies can now be allocated address range that matches needs better
 
-![alt text](image-51.png)
+![alt text](images/image-51.png)
 
 ### Subnetting Overview
 
@@ -242,7 +242,7 @@
 - If class B uses /28 mask then we've borrowed 12 bits from default 16. 
     - 2^12 = 4096
 
-![alt text](image-52.png)
+![alt text](images/image-52.png)
 
 #### Calculate # of hosts
 
@@ -267,7 +267,7 @@
 
 #### Class C /31 Subnet S8V44-45
 
-![alt text](image-53.png)
+![alt text](images/image-53.png)
 
 - /31 would be written as 255.255.255.254
 - need to at least have one bit on the right if you need more than 1 host. Furthest you can go is /31
@@ -275,21 +275,21 @@
     - borrows 7 bits for network address
     - gives us 128 subnets (2^7) which can accommodate 2 hosts each 
 
-![alt text](image-54.png)
+![alt text](images/image-54.png)
 
-![alt text](image-55.png)
+![alt text](images/image-55.png)
 
 - You can check this by:
     - we're using 200.15.10.0, so the first three octets are never going to change. 
     -The last octet, just start with all 0's, and then it would be 0000001, and then a 0 or a 1, and then 0000010,and then a 0 or a 1, and so on.
 
-![alt text](image-56.png)
+![alt text](images/image-56.png)
 
-![alt text](image-57.png)
+![alt text](images/image-57.png)
 
-![alt text](image-58.png)
+![alt text](images/image-58.png)
 
-![alt text](image-59.png)
+![alt text](images/image-59.png)
 
 - Here it's going up in values of 4 (line is right after the '4'). 
     - The first subnet is going to be a 200.15.10.0, so 200.15.10.0 is the network address.
@@ -310,11 +310,11 @@
 
 #### Class C /29 
 
-![alt text](image-60.png)
+![alt text](images/image-60.png)
 
-![alt text](image-61.png)
+![alt text](images/image-61.png)
 
-![alt text](image-62.png)
+![alt text](images/image-62.png)
 
 ### Variable Length Subnet Masking Example Pt 1
 
@@ -326,33 +326,33 @@
 - IP addressing reqs for each location (dif dept/hosts in dif subnets)
 - what size is appropriate?
 
-![alt text](image-63.png)
+![alt text](images/image-63.png)
 
-![alt text](image-64.png)
+![alt text](images/image-64.png)
 
 - work down from largest to smallest
     - IRL leave space in subnets for additional hosts/growth
     - In CCNA do *exactly* the exact number, don't leave space
 
-![alt text](image-65.png)
+![alt text](images/image-65.png)
 
-![alt text](image-66.png)
+![alt text](images/image-66.png)
 
 #### VLSM Examples Pt 2 S8V
 
-![alt text](image-67.png)
-![alt text](image-68.png)
-![alt text](image-69.png)
-![alt text](image-70.png)
-![alt text](image-71.png)
-![alt text](image-72.png)
-![alt text](image-73.png)
+![alt text](images/image-67.png)
+![alt text](images/image-68.png)
+![alt text](images/image-69.png)
+![alt text](images/image-70.png)
+![alt text](images/image-71.png)
+![alt text](images/image-72.png)
+![alt text](images/image-73.png)
 
 #### Subnetting Large Networks S8V48
 
-![alt text](image-74.png)
+![alt text](images/image-74.png)
 
-![alt text](image-75.png)
+![alt text](images/image-75.png)
 
 - Our IP: 135.15.10.138
     - Look at the last octet = 138, and find where it fits:Between 136 and 144
@@ -370,7 +370,7 @@
 
 ***See notebook
 
-![alt text](image-76.png)
+![alt text](images/image-76.png)
 
 
 ### Private IP Addresses S8V52
@@ -387,19 +387,19 @@ Private IP Ranges in Each Class:
 - C: 192.168-192.168.255.255
     - 192.168.0.0/16
 
-![alt text](image-77.png)
+![alt text](images/image-77.png)
 
-![alt text](image-78.png)
+![alt text](images/image-78.png)
 
 IPv6 is 128 bits 
 Provides 7.9*(10^28)
 
-![alt text](image-79.png)
-![alt text](image-80.png)
+![alt text](images/image-79.png)
+![alt text](images/image-80.png)
 
-![alt text](image-81.png)
+![alt text](images/image-81.png)
 
-![alt text](image-82.png)
-![alt text](image-83.png)
+![alt text](images/image-82.png)
+![alt text](images/image-83.png)
 
-![alt text](image-84.png)
+![alt text](images/image-84.png)
