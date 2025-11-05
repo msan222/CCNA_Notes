@@ -66,6 +66,24 @@
 
 ### Basic Router and Switch Configuration S14V80
 
+- `**Connected Routes`: automatically created when IP address is assigned to an interface & represent the subnet the interface is connected to. 
+- `**Local Routes`: represent the ip address of the interface itself and the mask is `always /32`
+    - Since a Local Route identifies only that specific interface, the Subnet Mask, too, identifies only that specific interface's IP address. 
+    - Therefore, it gets as specific as it can in identifying that interface with a /32 Subnet Mask.
+    - **Example**
+        - You've got a router with 2 interfaces: 
+            - Gi0/0 with an IP address of 192.0.2.1/24 - Gi0/1 with an IP address of 198.51.100.254/24 
+        - Exactly what will happen when:
+            - Router receives a packet on *Gi0/0* destined for *198.51.100.1*?
+            - Router receives a packet on *Gi0/0* destined for *198.51.100.254*?
+        - Answer: 
+            - Router will use connected route to forward *out of* Gi0/1 as the destination is in that subnet
+            - Router will use local route to *process the packet itself* as the destination is the ip interface's address
+    - **Analogy**
+        - If you were at a shipyard, and each pier had a ship that goes to a unique country, the **Local Route would tell you which pier you're boarding at**, and the **Connected Route would tell you which country it's going to.**
+        - The Local Route's Subnet is /32 because that interface is on your local device. 
+            - Devices use Subnet masks to distinguish the network address from the host address - - When it comes to choosing a Route, it wants to use the most specific route it can.
+
 ![alt text](images/image-247.png)
 
 ![alt text](images/image-248.png)
