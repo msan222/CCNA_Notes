@@ -4,7 +4,8 @@
         "microcontroller"
     ],
 
-    "pasteImage.path": "${currentFileDir}/images"
+    "pasteImage.path": "${currentFileDir}/images",
     
+    "markdown.preview.scrollEditorWithPreview": false
 }
 
