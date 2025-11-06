@@ -74,7 +74,7 @@
 
 - good to check the rip routes and why/why not they're in the routing table
 
-![](images/![alt%20text](image-1.png).png)
+![](images/![alt%20text](images/image-1D.png).png)
 
 ![](images/2025-11-05-17-49-39.png)
 
@@ -116,6 +116,14 @@ Commands:
 
 Give Internet Connectivity Everywhere:
 
+#### Inject Default Static Route into RIP on R4:
+
+AKA Command to Configure R1 to always originate and propagate a default route throughout the RIP routing domain: 
+
+`router rip`
+
+`default-information originate`
+
 ![](images/2025-11-05-18-11-12.png)
 
 inject:
@@ -144,7 +152,58 @@ Add a route for all routers to 203.0.113.0 (service provider) - make FE3/0 on R4
 
 ![](images/2025-11-05-18-31-42.png)
 
-![](images/2025-11-05-18-33-41.png)
+![](images/![](images/2025-11-05-18-33-41.png).png)
 
+![](images/2025-11-06-11-42-32.png)
 
+![](images/2025-11-06-11-43-42.png)
+
+![](images/2025-11-06-11-44-51.png)
+
+![](images/2025-11-06-11-45-28.png)
+
+![](images/2025-11-06-12-23-22.png)
+
+![](images/2025-11-06-12-23-38.png)
+
+![](images/2025-11-06-12-26-28.png)
+
+### EIGRP Lab Demo - S19V127
+
+![](images/2025-11-06-12-36-06.png)
+
+![](images/2025-11-06-12-37-17.png)
+
+![](images/2025-11-06-12-37-30.png)
+
+![](images/2025-11-06-12-37-42.png)
+
+- ^show neighbors is an important/useful command to check
+
+![](images/2025-11-06-12-38-12.png)
+
+- ^then check the routes
+
+#### Lab
+
+![](images/2025-11-06-12-38-58.png)
+
+- ^note all interfaces are in '10.0.0.0' network
+
+Configure all 5 Routers:
+
+![](images/2025-11-06-12-40-17.png)
+
+Check Neighbors: 
+
+R5
+![](images/2025-11-06-12-40-55.png)
+
+![](images/2025-11-06-12-51-19.png)
+
+![](images/2025-11-06-12-51-32.png)
+
+![](images/2025-11-06-12-51-49.png)
+
+![](images/2025-11-06-12-51-58.png)
 
