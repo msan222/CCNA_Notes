@@ -114,7 +114,7 @@ Can also check interfaces ospf has been enabled on:
 
 R4 has taken the highest ip address as its ID since there is no loopback (it's back practice for it to do that):
 
-![](images/2025-11-07-11-39-06.png)
+![](images/2025-11-07-11-39-06.png)router
 
 Add a loopback address: 
 (it does no shutdown automatically)
