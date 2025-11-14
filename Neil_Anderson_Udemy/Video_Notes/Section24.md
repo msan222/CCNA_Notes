@@ -36,3 +36,52 @@
 
 ![](images/2025-11-13-17-24-27.png)
 
+![](images/2025-11-14-10-50-42.png)
+
+![](images/2025-11-14-10-54-40.png)
+
+![](images/2025-11-14-10-54-54.png)
+
+![](images/2025-11-14-10-57-44.png)
+
+##### Lab:
+
+![](images/2025-11-14-11-13-32.png)
+
+- Already done the rest of the upstream configuration
+
+Configure R1:
+
+![](images/2025-11-14-11-24-11.png)
+
+Configure R2:
+
+![](images/2025-11-14-11-33-09.png)
+
+![](images/2025-11-14-11-33-21.png)
+
+See it on a PC:
+
+![](images/2025-11-14-11-37-22.png)
+
+### HSRP Advanced Topics - S24V174
+
+![](images/2025-11-14-11-44-28.png)
+
+![](images/2025-11-14-11-46-25.png)
+
+![](images/2025-11-14-11-47-52.png)
+
+![](images/2025-11-14-11-48-12.png)
+
+![](images/2025-11-14-11-48-21.png)
+
+To make it load balance:
+
+Configure 2 different HSRP Groups for the same ip subnet:
+![](images/2025-11-14-11-50-19.png)
+
+Configure multiple subnets going through the same pair of routers, then have one subnet going through one router and the other going through the other:
+![](images/2025-11-14-11-53-01.png)
+
+- ***HSRP group number is configured under the interface 
