@@ -367,6 +367,129 @@ Now we're going to bring our ports up:
 
 - Sales1 takes longer b/c we didn't put portfast on it
 
+### Root Guard Lab Demo - S25V188
+
+Configure spanning tree root guard 
+
+![](images/2025-11-15-16-23-14.png)
+
+Same lab topology cont 
+
+Eng dept in subnet 10.10.10.10 in VLAN 10 
+
+- Eng default gateway is at R1
+    - HSRP b/t R1/2
+
+- R2 is in subnet 10.10.10.11 for sales (VLAN 11) (default gateway)
+
+- CD2 Root bridge for VLAN 11, CD1 as root bridge for VLAN 10 (reverse as backup for each other)
+
+- Want to make sure that Access switches never become root bridges 
+
+- **Spanning tree enabled but not configured yet - but since CD1 has lowest MAC address it will end up being the root bridge for both VLANs 
+
+Start of Lab
+
+1. Verify:  `sh spanning tree vlan 10` (or 11)
+
+- see that CD1 is root bridge for both VLANs
+
+2. Give CD1 best priority for VLAN 10 (2nd best for VLAN11) and CD2 priority for VLAN 11 and 2nd best for VLAN 10 
+
+got to global config
+
+    `spanning-tree vlan 10 root primary` 
+
+    `spanning tee vlan 11 root secondary`
+
+check - `sh run | include spanning`
+
+- but now CD2 is the root bridge for both VLANs 
+
+on CD2 in global config:
+
+    `spanning-tree vlan 11 root primary` 
+    `spanning-tree vlan 10 root secondary`
+
+- Now we're set with the correct root bridges and backups 
+
+What if a network admin makes a mistake? (Gives a switch a value of zero by accident) - Access 3 will become the root bridge 
+
+How we stop this from happening: 
+
+    - on CD1 and CD2 we enable root guard on the interfaces down towards the Access layer switches to make sure that they never become the root
+
+CD2 & CD1 - enable on G0/0 & G0/3
+
+in global config:
+
+    - int G0/0 and G0/3
+
+`spanning-tree guard root` 
+
+Verify on both CD1 and CD2:
+
+`sh spanning-tree vlan 10` or 11 to see change in root bridge
+
+- port down to access 3 will be made 'root inconsistent' 
+
+- **Access 3 still thinks it has the best priority for the root bridge and is sending BPDUs but they are now getting rejected 
+
+    - do `sh spanning-tree vlan 10` on Access 3 and it will say that it is still the root 
+
+- Eng PCs can't ping default gateway b/c Access3 is now blackholed by root guard 
+
+on Access3:
+
+`sh run | include spanning`
+
+- here we can see that it has the wrong spanning-tree priority set 
+
+Fix: 
+    - global config then `no spanning-tree vlan 10 (or 11) priority 0`
+
+- **Now that the problem has been fixed and the interfaces on CD1 and CD2 are no longer receiving superior BPDUs, root guard will unblock Access3
+    - PCs will now be able to ping default gateways 
+
+### CCNA v1.1: BPDU filter  - S25V189
+
+#### Spanning Tree BPDU Filter 
+
+- while switches send BPDUs hosts do *not* 
+
+BPDU filter is similar to Root Guard in the way that it detects unexpected BPDUs 
+
+    - BPDU brings down the interfaces/ports that are sending them while BPDU filter filters BPDUs on ports but does NOT bring them down 
+
+- BPDU Filter works differently whether you enter it globally or on an interface 
+    - If enabled on global config (Applies to just interfaces that have portfast configured on them)
+        - Sends initial BPDUs then stops sending them 
+        - if a BPDU is received then it will remove portfast, disable BPDU filtering and act as a normal interface - it will then go through the different spanning tree stages to see if there's a loop there (Similar to portfast edge) 
+    - if enabled on just an interface 
+        - Will *not* send BPDUs and will ignore incoming BPDUs (effectively disables spanning tree)
+    - **Not** Recommended to enabled a BPDU filter 
+        - use case: if you have just a single down stream connection to a legacy switch that's causing STP issues 
+- Normally for interfaces connected to end hosts you will want to just enable spanning tree, portfast, and BPDU guard 
+
+Example of Use Case (unlikely irl) (***IN CASE ITS ON THE EXAM***): 
+
+- network of three regular cisco switches sw1 sw2 sw3 all connected. On ports where they are connected we are running spanning tree (block one port on SW3-Sw2 to prevent a loop)
+- SW3 is connected to a legacy switch
+    - Not configurable, low MAC address so it keeps trying to become the root bridge and we can't stop that 
+- **Notice that the legacy switch is acting like an end host (no loop is forming here)
+
+So, what we will do is disable spanning tree on the port of SW3 that is leading to the legacy switch - the legacy switch will still think it's the root bridge but it won't affect the rest of the network 
+
+Commands to do this:
+
+`sw3(config)# spanning-tree portfast bpdufilter default`
+`sw3(config)# interface g0/10 (interface that is linking SW3 and legacy)`
+`sw3(config)# spanning-tree bpdufilter enable`
+
+### CCNA v1.1: Loop Guard - S25V190
+
+
+
 
 
 
