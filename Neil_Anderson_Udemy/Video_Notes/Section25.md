@@ -34,7 +34,7 @@ PCs POV:
 
 ![](images/2025-11-14-15-05-47.png)
 
-- will only loop for length of TTL
+- will only loop for length of TTLS
 
 ![](images/2025-11-14-15-07-34.png)
 
@@ -225,7 +225,7 @@ Lab Example:
 
 ![](images/2025-11-15-13-55-15.png)
 
-- `sh spannining tree vlan 1` is best command to see everything 
+- `sh spanning tree vlan 1` is best command to see everything 
 
 ![](images/2025-11-15-14-00-44.png)
 
@@ -371,9 +371,7 @@ Now we're going to bring our ports up:
 
 Configure spanning tree root guard 
 
-![](images/2025-11-15-16-23-14.png)
-
-Same lab topology cont 
+![](images/2025-11-18-09-17-18.png)
 
 Eng dept in subnet 10.10.10.10 in VLAN 10 
 
@@ -392,9 +390,19 @@ Start of Lab
 
 1. Verify:  `sh spanning tree vlan 10` (or 11)
 
+![](images/2025-11-18-09-18-35.png)
+
+![](images/2025-11-18-09-18-56.png)
+
+![](images/2025-11-18-09-22-30.png)
+
 - see that CD1 is root bridge for both VLANs
 
 2. Give CD1 best priority for VLAN 10 (2nd best for VLAN11) and CD2 priority for VLAN 11 and 2nd best for VLAN 10 
+
+![](images/2025-11-18-09-23-20.png)
+
+![](images/2025-11-18-09-19-55.png)
 
 got to global config
 
@@ -455,7 +463,11 @@ Fix:
 
 #### Spanning Tree BPDU Filter 
 
+![](images/2025-11-18-09-24-33.png)
+
 - while switches send BPDUs hosts do *not* 
+
+![](images/2025-11-18-09-25-01.png)
 
 BPDU filter is similar to Root Guard in the way that it detects unexpected BPDUs 
 
@@ -473,6 +485,8 @@ BPDU filter is similar to Root Guard in the way that it detects unexpected BPDUs
 
 Example of Use Case (unlikely irl) (***IN CASE ITS ON THE EXAM***): 
 
+![](images/2025-11-18-09-25-24.png)
+
 - network of three regular cisco switches sw1 sw2 sw3 all connected. On ports where they are connected we are running spanning tree (block one port on SW3-Sw2 to prevent a loop)
 - SW3 is connected to a legacy switch
     - Not configurable, low MAC address so it keeps trying to become the root bridge and we can't stop that 
@@ -488,10 +502,127 @@ Commands to do this:
 
 ### CCNA v1.1: Loop Guard - S25V190
 
+![](images/2025-11-18-09-26-42.png)
 
+![](images/2025-11-18-10-02-49.png)
 
+![](images/2025-11-18-10-09-56.png)
 
+![](images/2025-11-18-10-35-19.png)
 
+![](images/2025-11-18-10-48-46.png)
+
+![](images/2025-11-18-10-49-24.png)
+
+To Prevent This:
+
+![](images/2025-11-18-10-49-39.png)
+
+- UDLD sends 'keepalives' in both directions on a link and it both aren't receiving them then it knows that there's a unidirectional link problem
+
+![](images/2025-11-18-10-54-20.png)
+
+![](images/2025-11-18-10-59-18.png)
+
+![](images/2025-11-18-11-06-45.png)
+
+![](images/2025-11-18-11-09-43.png)
+
+![](images/2025-11-18-11-29-33.png)
+
+![](images/2025-11-18-11-30-34.png)
+
+![](images/2025-11-18-11-30-58.png)
+
+![](images/2025-11-18-11-34-30.png)
+
+When Loop Guard Does detect a unidirectional link failure and places a port into 'inconsistent' state:
+
+![](images/2025-11-18-11-36-59.png)
+
+### CCNA v1.1: PVST+ vs RPVST+ Convergence - S25V191
+
+- Convergence in the sense of how Spanning Tree builds loop-free paths throughout the topology & how it recovers from any link failures
+
+![](images/2025-11-18-11-57-14.png)
+
+![](images/2025-11-18-12-05-49.png)
+
+![](images/2025-11-18-12-06-51.png)
+
+- *UplinkFast and BackboneFast are not covered in the CCNA - easiest way to get them is just to enable RPVST+
+
+![](images/2025-11-18-12-08-55.png)
+
+- 802.1D and PVST+ are *slow*
+
+![](images/2025-11-18-12-11-04.png)
+
+![](images/2025-11-18-12-16-12.png)
+
+- RSTP, RPVST+, and MSTP are much faster
+
+![](images/2025-11-18-12-17-19.png)
+
+![](images/2025-11-18-12-20-02.png)
+
+![](images/2025-11-18-12-20-41.png)
+
+- should change it to rapid-pvst (RPVST+) OR if you want to group your VLANs into spanning tree instances, then you should pick MST (the ones listed above are the 'plus') versions
+
+![](images/2025-11-18-12-24-07.png)
+
+### CCNA v1.1: RPVST+ and Hub Interoperability - S25V192
+
+![](images/2025-11-18-12-32-51.png)
+
+![](images/2025-11-18-12-34-09.png)
+
+![](images/2025-11-18-12-44-50.png)
+
+![](images/2025-11-18-12-51-37.png)
+
+![](images/2025-11-18-13-00-48.png)
+
+- ^using 802.1D or PVST+ here will take 30sec for failover if there's an outage
+- On Acc4 it has 'backup' ports going upstream and downstream (F0/24 and F0/11) 
+    - BUT if we were to do a 'sh' command there's no way of telling which backup port is for upstream and which is for downstream
+
+If we switch to RSTP (RPVST+ or MSTP on Cisco):
+
+![](images/2025-11-18-13-15-23.png)
+
+- we now have an actual backup port F0/11 facing towards the hub downstream
+
+![](images/2025-11-18-13-17-31.png)
+
+- if we were to do a 'sh' command here on Acc4 we would see that F0/24 is an alternate port
+
+![](images/2025-11-18-13-18-41.png)
+
+### STP Troubleshooting Lab Notes:
+
+![](images/2025-11-18-15-07-20.png)
+
+![](images/2025-11-18-15-23-33.png)
+
+![](images/2025-11-18-15-28-14.png)
+
+![](images/2025-11-18-15-29-31.png)
+
+![](images/2025-11-18-15-29-45.png)
+
+- To get to internet PC1 will have to go:
+
+PC1 -> Acc3 -> CD1 -> R1 -> SP1
+
+- ^This is fine
+
+- PC2's path is not fine:
+
+PC2 -> Acc4 -> CD1 -> Acc3 -> CD1 -> R1
+
+![](images/2025-11-18-15-52-43.png)
 
 
 
