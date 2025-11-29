@@ -201,3 +201,45 @@ Trap for when someone invokes configuration mode on the router:
 
 - Then you'd configure a matching user on the NMS server too and *then* the NMS server would be able to access the device and pull information from it. 
 
+### SNMPv3 Lab Demo - S34V279
+
+![](images/2025-11-29-14-17-14.png)
+
+- Using PRTG Network Monitor (SNMP software)
+
+- Haven't configured SNMP settings, including username, on the router yet
+
+Create Group, set version and security level:
+
+![](images/2025-11-29-14-21-02.png)
+
+COnfigure User (security, version, password, encryption, password):
+
+![](images/2025-11-29-14-22-16.png)
+
+Now configure matching settings on SNMP manager (server):
+
+![](images/2025-11-29-14-24-04.png)
+
+![](images/2025-11-29-14-24-26.png)
+
+![](images/2025-11-29-14-25-25.png)
+
+![](images/2025-11-29-14-25-56.png)
+
+![](images/2025-11-29-14-26-07.png)
+
+### Syslog vs SNMP - S34V280
+
+![](images/2025-11-29-14-26-55.png)
+
+![](images/2025-11-29-14-28-47.png)
+
+![](images/2025-11-29-14-29-35.png)
+
+![](images/2025-11-29-14-30-38.png)
+
+![](images/2025-11-29-14-31-19.png)
+
+
+
