@@ -372,6 +372,162 @@ This is @ the Application Layer:
 
 ![](images/2025-12-03-19-04-02.png)
 
+![](images/2025-12-04-15-37-54.png)
+
+![](images/2025-12-04-15-39-29.png)
+
+![](images/2025-12-04-15-40-12.png)
+
+![](images/2025-12-04-15-40-22.png)
+
+![](images/2025-12-04-15-41-11.png)
+
+![](images/2025-12-04-15-41-24.png)
+
+![](images/2025-12-04-15-41-33.png)
+
+![](images/2025-12-04-15-41-44.png)
+
+![](images/2025-12-04-15-42-22.png)
+![](images/2025-12-04-15-42-41.png)
+
+![](images/2025-12-04-15-45-03.png)
+
+![](images/2025-12-04-15-45-58.png)
+
+![](images/2025-12-04-15-51-13.png)
+
+- ^When a Cisco device is plugged in and learns its DNS server from DHCP, it will check it for an entry for PNP server and if found, then connect to it as its controller.
+
+![](images/2025-12-04-15-52-43.png)
+
+![](images/2025-12-04-15-53-11.png)
+
+![](images/2025-12-04-15-53-20.png)
+
+![](images/2025-12-04-15-53-51.png)
+
+![](images/2025-12-04-15-58-43.png)
+
+![](images/2025-12-04-15-58-55.png)
+
+### Software Defined Architecture - SD-Access - S38V317
+
+![](images/2025-12-04-16-02-53.png)
+
+![](images/2025-12-04-16-03-12.png)
+
+![](images/2025-12-04-16-03-56.png)
+
+![](images/2025-12-04-16-05-02.png)
+
+![](images/2025-12-04-16-05-15.png)
+
+![](images/2025-12-04-16-06-09.png)
+
+![](images/2025-12-04-16-07-23.png)
+
+- ^IS-IS is used as the routing protocol b/c it's very extensible - easy to add additional functionality
+
+- Don't need to know abt IS-IS for CCNA 
+
+![](images/2025-12-04-16-09-20.png)
+
+![](images/2025-12-04-16-10-54.png)
+
+![](images/2025-12-04-16-11-24.png)
+
+![](images/2025-12-04-16-11-33.png)
+
+![](images/2025-12-04-16-11-52.png)
+
+![](images/2025-12-04-16-12-18.png)
+
+![](images/2025-12-04-16-12-27.png)
+
+- ^Switch 10.10.10.1 builds the VXLAN tunnel to the destination host
+
+![](images/2025-12-04-16-13-21.png)
+
+![](images/2025-12-04-16-13-34.png)
+
+![](images/2025-12-04-16-14-31.png)
+
+![](images/2025-12-04-16-16-48.png)
+
+### Software Defined Architecture - SD-WAN - S38V318
+
+![](images/2025-12-04-16-19-39.png)
+
+![](images/2025-12-04-16-20-13.png)
+
+![](images/2025-12-04-16-22-16.png)
+
+![](images/2025-12-04-16-24-59.png)
+
+![](images/2025-12-04-16-26-01.png)
+
+![](images/2025-12-04-16-29-08.png)
+
+![](images/2025-12-04-16-33-52.png)
+
+![](images/2025-12-04-16-34-30.png)
+
+![](images/2025-12-04-16-35-39.png)
+
+- **Need this separate orchestrator** b/c SD-WAN Managers/Controllers are typically deployed inside Data Center & won't allow incoming connections from internet
+    - SD-WAN Validator allows these incoming connections from internet, now Manager/Controller can find all other components from there
+
+![](images/2025-12-04-16-38-15.png)
+
+![](images/2025-12-04-16-38-43.png)
+
+![](images/2025-12-04-16-40-45.png)
+
+![](images/2025-12-04-16-41-34.png)
+
+![](images/2025-12-04-16-42-25.png)
+
+![](images/2025-12-04-16-42-54.png)
+
+### Cisco Meraki - S38V319
+
+![](images/2025-12-04-16-44-33.png)
+
+![](images/2025-12-04-16-45-32.png)
+
+![](images/2025-12-04-16-48-20.png)
+
+![](images/2025-12-04-16-49-30.png)
+
+![](images/2025-12-04-16-50-18.png)
+
+![](images/2025-12-04-16-50-28.png)
+
+![](images/2025-12-04-16-50-57.png)
+
+![](images/2025-12-04-16-51-39.png)
+
+![](images/2025-12-04-16-52-08.png)
+
+![](images/2025-12-04-16-52-46.png)
+
+![](images/2025-12-04-16-53-31.png)
+
+All Free:
+
+![](images/2025-12-04-16-54-37.png)
+
+Sandbox:
+
+![](images/2025-12-04-16-54-58.png)
+
+For Actually using the sandbox:
+
+![](images/2025-12-04-16-56-13.png)
+
+- ^Guided labs
+
 
 
 
