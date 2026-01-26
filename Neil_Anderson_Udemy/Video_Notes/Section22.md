@@ -1,4 +1,4 @@
-## Section 2 - Inter-VLAN Routing
+## Section 22 - Inter-VLAN Routing
 
 ### Router with Separate Interfaces - S22V157
 
